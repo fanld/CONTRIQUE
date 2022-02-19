@@ -1,7 +1,7 @@
 import torchvision
 
 def get_network(name, pretrained=False):
-    network = {
+    network = {#network的数据类型是字典dict
         "VGG16": torchvision.models.vgg16(pretrained=pretrained),
         "VGG16_bn": torchvision.models.vgg16_bn(pretrained=pretrained),
         "resnet18": torchvision.models.resnet18(pretrained=pretrained),

@@ -8,9 +8,16 @@ import os
 import argparse
 import pickle
 
+import numpy as np
+import torch
 from PIL import Image
+from torchvision import transforms
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+from modules.CONTRIQUE_model import CONTRIQUE_model
+from modules.network import get_network
+
+
+#os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 def main(args):
     # load image
@@ -20,7 +27,7 @@ def main(args):
     sz = image.size
     image_2 = image.resize((sz[0] // 2, sz[1] // 2))
     
-    # transform to tensor
+    # transform to tensor #不太懂fanld
     image = transforms.ToTensor()(image).unsqueeze(0).cuda()
     image_2 = transforms.ToTensor()(image_2).unsqueeze(0).cuda()
     

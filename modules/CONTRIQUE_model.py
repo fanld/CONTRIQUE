@@ -4,7 +4,7 @@ import torch
 class CONTRIQUE_model(nn.Module):
     # resnet50 architecture with projector
     def __init__(self, args, encoder, n_features, \
-                 patch_dim = (2,2), normalize = True, projection_dim = 128):
+                 patch_dim = (2,2), normalize = True, projection_dim = 128):#__init__是类的构造方法
         super(CONTRIQUE_model, self).__init__()
 
         self.normalize = normalize
