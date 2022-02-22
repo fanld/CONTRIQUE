@@ -4,11 +4,11 @@ import torch
 class CONTRIQUE_model(nn.Module):
     # resnet50 architecture with projector
     def __init__(self, args, encoder, n_features, \
-                 patch_dim = (2,2), normalize = True, projection_dim = 128):
+                 patch_dim = (2,2), normalize = True, projection_dim = 128):#__init__是类的构造方法
         super(CONTRIQUE_model, self).__init__()
 
         self.normalize = normalize
-        self.encoder = nn.Sequential(*list(encoder.children())[:-2])
+        self.encoder = nn.Sequential(*list(encoder.children())[:-2])#去掉resnet50的最后两层（avgpool,fc）
         self.n_features = n_features
         self.patch_dim = patch_dim
         
@@ -32,7 +32,8 @@ class CONTRIQUE_model(nn.Module):
         # local features
         h_i_patch = self.avgpool_patch(h_i)
         h_j_patch = self.avgpool_patch(h_j)
-        
+
+        # 论文中是2*2patches
         h_i_patch = h_i_patch.reshape(-1,self.n_features,\
                                       self.patch_dim[0]*self.patch_dim[1])
         
