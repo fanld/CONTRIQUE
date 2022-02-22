@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import torchvision
 
 def get_network(name, pretrained=False):
@@ -14,8 +13,6 @@ def get_network(name, pretrained=False):
     if name not in network.keys():
         raise KeyError(f"{name} is not a valid network architecture")
     return network[name]
-=======
-import torchvision
 
 def get_network(name, pretrained=False):
     network = {#network的数据类型是字典dict
@@ -30,4 +27,3 @@ def get_network(name, pretrained=False):
     if name not in network.keys():
         raise KeyError(f"{name} is not a valid network architecture")
     return network[name]
->>>>>>> 9b1a68baddae7596ff286d2a3d3e63b19d41ea19
