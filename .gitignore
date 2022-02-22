@@ -1,0 +1,7 @@
+.idea/
+__pycache__/
+csv_files/file_names_syn.csv
+csv_files/file_names_ugc.csv
+models/CONTRIQUE_checkpoint25.tar
+modules/__pycache__/*
+modules/sync_batchnorm/__pycache__/*
