@@ -1,0 +1,1 @@
+sudo docker run --gpus=all -idt -v /media/fanld/data/dataset:/dataset pytorch-fanld:0.2
